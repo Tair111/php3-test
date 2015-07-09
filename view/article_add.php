@@ -12,7 +12,7 @@
     <p>Текст:<br />
         <textarea name="text" cols="40" rows="3" required></textarea>
     </p>
-    <input type="submit" name="submit" value="Отправить"/>
+    <input type="submit" name="submit" value="Добавить"/>
 </form>
     <a href="/../index.php">На главную</a>
     <br />

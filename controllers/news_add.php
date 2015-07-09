@@ -5,7 +5,9 @@ if (isset($_POST['title']) && isset($_POST['text'])){
     $title =  $_POST['title'];
     $text =  $_POST['text'];
     $status_add_article = '';
-if (News_setArticle($title,$text))  {
+	$conteyner = new News;
+	$add = $conteyner->insertArticle($title, $text);
+if ($add)  {
      $status_add_article = 'Новость добавлена';
  }
     else {

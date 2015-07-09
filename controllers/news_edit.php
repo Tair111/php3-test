@@ -3,8 +3,10 @@
 
 
    if (isset($_GET['id'])){
+		
+		$conteyner = new News;
 		$id = $_GET['id'];
-        $edit_article = News_getOne($_GET['id']);
+        $edit_article = $conteyner->selectArticleOne($id);
     }
 		
 	
@@ -13,7 +15,9 @@
 		$new_text = $_POST['text'];
 		$id = $_POST['id'];		
 		
-		if (News_editArticle($id, $new_title, $new_text))  {
+		$conteyner = new News;
+		$edit = $conteyner->updateArticle($id, $new_title, $new_text);
+		if ($edit)  {
 			$status_edit_article = 'Новость изменена';
 		}
 			else {
@@ -22,8 +26,12 @@
 	}
 	
 	if (isset($_POST['del_article'])){
-		$id = $_POST['id'];		
-		if (News_delArticle($id))  {
+		$id = $_POST['id'];	
+		$new_title = $_POST['title'];
+
+		$conteyner = new News;
+		$del = $conteyner->delArticle($id);
+		if ($del)  {
 			$status_edit_article = 'Новость удалена';
 		}
 			else {
