@@ -40,4 +40,4 @@
 	}
 	
 
-    include __DIR__.'/../view/article_edit.php';
+    require __DIR__.'/../view/article_edit.php';
