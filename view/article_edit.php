@@ -22,4 +22,4 @@
 </html>
 <?php
 
-    echo $new_title.' '.$status_edit_article;
+    echo $title_status.' '.$status_edit_article;

@@ -1,9 +1,10 @@
 <?php
-    require_once  __DIR__.'/../models/news.php';
+    require_once  __DIR__.'/../boot.php';
 
+	$view = new View;
     if (isset($_GET['id'])){
 		$conteyner = new News;
-        $one_article = $conteyner->selectArticleOne($_GET['id']);
+        $view->one_article = $conteyner->selectArticleOne($_GET['id']);
     }
-
-    include __DIR__.'/../view/article_review.php';
+	$view->display(__DIR__. '/../view/article_review.php');
+   

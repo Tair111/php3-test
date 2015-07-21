@@ -1,20 +1,23 @@
 <?php
-require_once __DIR__.'/../models/news.php';
 
+
+require_once __DIR__ . '/../boot.php';
+
+$view =  new View;
 if (isset($_POST['title']) && isset($_POST['text'])){
     $title =  $_POST['title'];
     $text =  $_POST['text'];
-    $status_add_article = '';
+    $view->status_add_article = '';
+	$view->titlestatus =  $_POST['title'];
+	
 	$conteyner = new News;
-	$add = $conteyner->insertArticle($title, $text);
-if ($add)  {
-     $status_add_article = 'Новость добавлена';
+	$view->add = $conteyner->insertArticle($title, $text);
+if ($view-add)  {
+     $view->status_add_article = 'Новость добавлена';
  }
     else {
-        $status_add_article = '!!!Новость не добавлена!!!';
+        $view->status_add_article = '!!!Новость не добавлена!!!';
     }
 }
 
-include __DIR__.'/../view/article_add.php';
-
-
+$view->display('../view/article_add.php');

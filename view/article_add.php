@@ -20,4 +20,4 @@
 </html>
 <?php
 
-    echo $title.' '.$status_add_article;
+    echo $titlestatus.' '.$status_add_article;

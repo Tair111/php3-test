@@ -1,7 +1,9 @@
 <?php
-require_once __DIR__ . '/../models/news.php';
+require_once __DIR__ . '/../boot.php';
 
 $conteyner = new News;
-$news = $conteyner->selectArticleAll();
+$view =new View;
 
-require __DIR__ .'/../view/article_review_all.php';
+$view->news = $conteyner->selectArticleAll();
+$view->display('/../view/article_review_all.php');
+
