@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Редактирование новости:</h1>
-<form action="/../controllers/news_edit.php" method="post">
+<form action="/../index.php?route=news/edit" method="post">
 	<input type="hidden" name="id" value="<?=$_GET['id']?>" />
     <p>Заголовок:<br />
         <input type="text" name="title" value="<?=$edit_article['title'];?>" required placeholder=" |Enter title" autofocus=""/><br />
@@ -16,7 +16,7 @@
     <input type="submit" name="edit_article" value="Отправить"/>
 	<input type="submit" name="del_article" value="Удалить"/>
 </form>
-    <a href="/../index.php">На главную</a>
+    <a href="/../index.php?route=news/index">На главную</a>
     <br />
 </body>
 </html>

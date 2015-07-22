@@ -7,16 +7,16 @@
 <body>
     <div>
         <?foreach ($news as $key => $value): ?>
-            <a href="/../controllers/news_review.php?id=<?= $value['id']; ?>">Просмотр новости № <?= $key+1; ?></a><br />
+            <a href="./index.php?route=news/one&id=<?= $value['id']; ?>">Просмотр новости № <?= $key+1; ?></a><br />
         <?php endforeach; ?>
     </div>
     <br/>
     <div>
-        <a href="/../controllers/news_review_all.php">Все новости</a>
+        <a href="./index.php?route=news/all">Все новости</a>
     </div>
     <br/>
     <div>
-        <a href="/../controllers/news_add.php">Добавление новостей</a>
+        <a href="./index.php?route=news/add">Добавление новостей</a>
     </div>
 </body>
 </html>
